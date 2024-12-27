@@ -51,7 +51,7 @@
                                 <p>Sign in Page</p>
                             </div>
                             <div class="col-auto">
-                                <a href="signin.html" class="btn btn-sm btn-icon btn-primary rounded-circle">
+                                <a href="{{route('login')}}" class="btn btn-sm btn-icon btn-primary rounded-circle">
                                     <img src="{{ asset('assets/img/icons/chevron-right.svg') }}" alt="Chevron Right">
                                 </a>
                             </div>
