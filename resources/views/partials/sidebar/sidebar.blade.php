@@ -1,7 +1,7 @@
 <aside class="sidebar bg-light">
     <div class="tab-content h-100" role="tablist">
 
-        <div class="tab-pane fade h-100 " id="tab-content-chats" role="tabpanel">
+        <div class="tab-pane fade h-100 show active" id="tab-content-chats" role="tabpanel">
             <div class="d-flex flex-column h-100 position-relative">
                 <div class="hide-scrollbar" id="channels-scroll" data-page="2">
 
@@ -119,7 +119,7 @@
         </div>
 
         <!-- Notifications - Notices -->
-        <div class="tab-pane fade h-100 show active" id="tab-content-notifications" role="tabpanel">
+        <div class="tab-pane fade h-100" id="tab-content-notifications" role="tabpanel">
             <div class="d-flex flex-column h-100">
                 <div class="hide-scrollbar">
                     <div class="container py-8">
