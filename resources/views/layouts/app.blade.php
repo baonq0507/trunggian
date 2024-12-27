@@ -70,7 +70,7 @@
             <!-- Chat --> --}}
 
         <!-- Chat -->
-        <main class="main is_visible" data-dropzone-area="">
+        <main class="main " data-dropzone-area="">
             <div class="container h-100">
                 @yield('content')
             </div>
