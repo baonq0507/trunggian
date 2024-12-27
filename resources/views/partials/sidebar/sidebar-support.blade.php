@@ -9,7 +9,7 @@
 
             <!-- Search -->
             <div class="mb-6">
-                @@include("../components/search.html")
+                @include('partials.components.search')
             </div>
 
             <!-- Docs -->
@@ -18,7 +18,7 @@
 
                     <div class="row align-items-center gx-5">
                         <div class="col-auto text-primary">
-                            @@include("../../assets/img/brand/brand.svg")
+                            <img src="{{ asset('assets/img/brand/brand.svg') }}" alt="Brand">
                         </div>
 
                         <div class="col">
@@ -28,7 +28,7 @@
 
                         <div class="col-auto">
                             <a href="docs/index.html" class="btn btn-sm btn-icon btn-primary rounded-circle">
-                                @@include("../../assets/img/icons/chevron-right.svg")
+                                <img src="{{ asset('assets/img/icons/chevron-right.svg') }}" alt="Chevron Right">
                             </a>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                             </div>
                             <div class="col-auto">
                                 <a href="signin.html" class="btn btn-sm btn-icon btn-primary rounded-circle">
-                                    @@include("../../assets/img/icons/chevron-right.svg")
+                                    <img src="{{ asset('assets/img/icons/chevron-right.svg') }}" alt="Chevron Right">
                                 </a>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                             </div>
                             <div class="col-auto">
                                 <a href="signup.html" class="btn btn-sm btn-icon btn-primary rounded-circle">
-                                    @@include("../../assets/img/icons/chevron-right.svg")
+                                    <img src="{{ asset('assets/img/icons/chevron-right.svg') }}" alt="Chevron Right">
                                 </a>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                             </div>
                             <div class="col-auto">
                                 <a href="password-reset.html" class="btn btn-sm btn-icon btn-primary rounded-circle">
-                                    @@include("../../assets/img/icons/chevron-right.svg")
+                                    <img src="{{ asset('assets/img/icons/chevron-right.svg') }}" alt="Chevron Right">
                                 </a>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                             </div>
                             <div class="col-auto">
                                 <a href="lockscreen.html" class="btn btn-sm btn-icon btn-primary rounded-circle">
-                                    @@include("../../assets/img/icons/chevron-right.svg")
+                                    <img src="{{ asset('assets/img/icons/chevron-right.svg') }}" alt="Chevron Right">
                                 </a>
                             </div>
                         </div>

@@ -2,7 +2,7 @@
     <!-- Offcanvas Header -->
     <div class="offcanvas-header py-4 py-lg-7 border-bottom ">
         <a class="icon icon-lg text-muted" href="#" data-bs-dismiss="offcanvas">
-            @@include("../../assets/img/icons/chevron-left.svg")
+            <img src="{{ asset('assets/img/icons/chevron-left.svg') }}" alt="Chevron Left">
         </a>
 
         <div class="visibility-xl-invisible overflow-hidden text-center">
@@ -11,7 +11,7 @@
         </div>
 
         <a class="icon icon-lg text-muted" data-bs-toggle="collapse" href="#search-members" role="button" aria-expanded="false" aria-controls="search-members" onclick="event.preventDefault();">
-            @@include("../../assets/img/icons/filter.svg")
+            <img src="{{ asset('assets/img/icons/filter.svg') }}" alt="Filter">
         </a>
     </div>
     <!-- Offcanvas Header -->
@@ -27,7 +27,7 @@
                     <div class="input-group">
                         <div class="input-group-text" id="search-user">
                             <div class="icon icon-lg">
-                                @@include("../../assets/img/icons/search.svg")
+                                <img src="{{ asset('assets/img/icons/search.svg') }}" alt="Search">
                             </div>
                         </div>
 
@@ -46,7 +46,7 @@
             </li>
 
             <li class="list-group-item">
-                @@loop("../components/member.html", [{ "id": "1", "name": "Bill Marrow", "abbr": "", "avatar": "assets/img/avatars/6.jpg", "status": "last seen 3 days ago", "online": "" }])
+                @include('partials.components.member', ['id' => '1', 'name' => 'Bill Marrow', 'abbr' => '', 'avatar' => 'assets/img/avatars/6.jpg', 'status' => 'last seen 3 days ago', 'online' => ''])
             </li>
 
             <li class="list-group-item">
@@ -54,11 +54,11 @@
             </li>
 
             <li class="list-group-item">
-                @@loop("../components/member.html", [{ "id": "2", "name": "Damian Binder", "abbr": "", "avatar": "assets/img/avatars/5.jpg", "status": "last seen within a week", "online": "" }])
+                @include('partials.components.member', ['id' => '2', 'name' => 'Damian Binder', 'abbr' => '', 'avatar' => 'assets/img/avatars/5.jpg', 'status' => 'last seen within a week', 'online' => ''])
             </li>
 
             <li class="list-group-item">
-                @@loop("../components/member.html", [{ "id": "3", "name": "Don Knight", "abbr": "D", "avatar": "", "status": "online", "online": "avatar-online" }])
+                @include('partials.components.member', ['id' => '3', 'name' => 'Don Knight', 'abbr' => 'D', 'avatar' => '', 'status' => 'online', 'online' => 'avatar-online'])
             </li>
 
             <li class="list-group-item">
@@ -66,7 +66,7 @@
             </li>
 
             <li class="list-group-item">
-                @@loop("../components/member.html", [{ "id": "4", "name": "Elise Dennis", "abbr": "", "avatar": "assets/img/avatars/8.jpg", "status": "online", "online": "avatar-online" }])
+                @include('partials.components.member', ['id' => '4', 'name' => 'Elise Dennis', 'abbr' => '', 'avatar' => 'assets/img/avatars/8.jpg', 'status' => 'online', 'online' => 'avatar-online'])
             </li>
 
             <li class="list-group-item">
@@ -74,15 +74,15 @@
             </li>
 
             <li class="list-group-item">
-                @@loop("../components/member.html", [{ "id": "5", "name": "Mila White", "abbr": "", "avatar": "assets/img/avatars/11.jpg", "status": "last seen a long time ago", "online": "" }])
+                @include('partials.components.member', ['id' => '5', 'name' => 'Mila White', 'abbr' => '', 'avatar' => 'assets/img/avatars/11.jpg', 'status' => 'last seen a long time ago', 'online' => ''])
             </li>
 
             <li class="list-group-item">
-                @@loop("../components/member.html", [{ "id": "6", "name": "Michael Fuller", "abbr": "M", "avatar": "", "status": "online", "online": "avatar-online" }])
+                @include('partials.components.member', ['id' => '6', 'name' => 'Michael Fuller', 'abbr' => 'M', 'avatar' => '', 'status' => 'online', 'online' => 'avatar-online'])
             </li>
 
             <li class="list-group-item">
-                @@loop("../components/member.html", [{ "id": "7", "name": "Marshall Wallaker", "abbr": "M", "avatar": "", "status": "last seen within a month", "online": "" }])
+                @include('partials.components.member', ['id' => '7', 'name' => 'Marshall Wallaker', 'abbr' => 'M', 'avatar' => '', 'status' => 'last seen within a month', 'online' => ''])
             </li>
 
             <li class="list-group-item">
@@ -90,7 +90,7 @@
             </li>
 
             <li class="list-group-item">
-                @@loop("../components/member.html", [{ "id": "8", "name": "Ollie Chandler", "abbr": "O", "avatar": "", "status": "online", "online": "avatar-online" }])
+                @include('partials.components.member', ['id' => '8', 'name' => 'Ollie Chandler', 'abbr' => 'O', 'avatar' => '', 'status' => 'online', 'online' => 'avatar-online'])
             </li>
 
             <li class="list-group-item">
@@ -98,15 +98,15 @@
             </li>
 
             <li class="list-group-item">
-                @@loop("../components/member.html", [{ "id": "9", "name": "Warren White", "abbr": "", "avatar": "assets/img/avatars/4.jpg", "status": "last seen recently", "online": "" }])
+                @include('partials.components.member', ['id' => '9', 'name' => 'Warren White', 'abbr' => '', 'avatar' => 'assets/img/avatars/4.jpg', 'status' => 'last seen recently', 'online' => ''])
             </li>
 
             <li class="list-group-item">
-                @@loop("../components/member.html", [{ "id": "10", "name": "William Wright", "abbr": "", "avatar": "assets/img/avatars/7.jpg", "status": "online", "online": "avatar-online" }])
+                @include('partials.components.member', ['id' => '10', 'name' => 'William Wright', 'abbr' => '', 'avatar' => 'assets/img/avatars/7.jpg', 'status' => 'online', 'online' => 'avatar-online'])
             </li>
 
             <li class="list-group-item">
-                @@loop("../components/member.html", [{ "id": "11", "name": "Winton Wilkinson", "abbr": "W", "avatar": "", "status": "online", "online": "avatar-online" }])
+                @include('partials.components.member', ['id' => '11', 'name' => 'Winton Wilkinson', 'abbr' => 'W', 'avatar' => '', 'status' => 'online', 'online' => 'avatar-online'])
             </li>
         </ul>
         <!-- Members -->
@@ -119,7 +119,7 @@
             Add members
 
             <span class="icon ms-auto">
-                @@include("../../assets/img/icons/chevron-right.svg")
+                <img src="{{ asset('assets/img/icons/chevron-right.svg') }}" alt="Chevron Right">
             </span>
         </a>
     </div>

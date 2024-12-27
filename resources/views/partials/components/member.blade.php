@@ -1,17 +1,13 @@
 <div class="row align-items-center gx-5">
     <div class="col-auto">
         <div class="avatar @@online">
-            @if (context.avatar != "") {
-                <img class="avatar-img" src="@@avatar" alt="">
-            }
-            @if (context.abbr != "") {
-                <span class="avatar-text">@@abbr</span>
-            }
+            <img class="avatar-img" src="{{ auth()->user()->avatar }}" alt="">
+            <span class="avatar-text">{{ auth()->user()->name }}</span>
         </div>
     </div>
     <div class="col">
-        <h5>@@name</h5>
-        <p>@@status</p>
+        <h5>{{ auth()->user()->name }}</h5>
+        <p>{{ auth()->user()->status }}</p>
     </div>
     <div class="col-auto">
         <div class="form-check">

@@ -9,7 +9,7 @@
 
             <!-- Search -->
             <div class="mb-6">
-                @@include("../components/search.html")
+                @include('partials.components.search')
             </div>
 
             <!-- Today -->
@@ -33,7 +33,7 @@
                                     <img class="avatar-img" src="assets/img/avatars/11.jpg" alt="">
 
                                     <div class="badge badge-circle bg-primary border-outline position-absolute bottom-0 end-0">
-                                        @@include("../../assets/img/icons/user.svg")
+                                        <img src="{{ asset('assets/img/icons/user.svg') }}" alt="User">
                                     </div>
                                 </a>
                             </div>
@@ -51,7 +51,7 @@
 
                                     <div class="dropdown ms-5">
                                         <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            @@include("../../assets/img/icons/more-horizontal.svg")
+                                            <img src="{{ asset('assets/img/icons/more-horizontal.svg') }}" alt="More Horizontal">
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">Show less often</a></li>
@@ -85,11 +85,11 @@
                                 <!-- Avatar -->
                                 <a href="#" class="avatar">
                                     <span class="avatar-text bg-warning">
-                                        @@include("../../assets/img/icons/star.svg")
+                                        <img src="{{ asset('assets/img/icons/star.svg') }}" alt="Star">
                                     </span>
 
                                     <div class="badge badge-circle bg-warning border-outline position-absolute bottom-0 end-0">
-                                        @@include("../../assets/img/icons/gift.svg")
+                                        <img src="{{ asset('assets/img/icons/gift.svg') }}" alt="Gift">
                                     </div>
                                 </a>
                             </div>
@@ -107,7 +107,7 @@
 
                                     <div class="dropdown ms-5">
                                         <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            @@include("../../assets/img/icons/more-horizontal.svg")
+                                            <img src="{{ asset('assets/img/icons/more-horizontal.svg') }}" alt="More Horizontal">
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">Show less often</a></li>
@@ -143,11 +143,11 @@
                                 <!-- Avatar -->
                                 <div class="avatar">
                                     <span class="avatar-text bg-success">
-                                        @@include("../../assets/img/icons/lock.svg")
+                                        <img src="{{ asset('assets/img/icons/lock.svg') }}" alt="Lock">
                                     </span>
 
                                     <div class="badge badge-circle bg-success border-outline position-absolute bottom-0 end-0">
-                                        @@include("../../assets/img/icons/refresh-ccw.svg")
+                                        <img src="{{ asset('assets/img/icons/refresh-ccw.svg') }}" alt="Refresh Ccw">
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@
 
                                     <div class="dropdown ms-5">
                                         <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            @@include("../../assets/img/icons/more-horizontal.svg")
+                                            <img src="{{ asset('assets/img/icons/more-horizontal.svg') }}" alt="More Horizontal">
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">Show less often</a></li>
@@ -202,7 +202,7 @@
                                     <img class="avatar-img" src="assets/img/avatars/7.jpg" alt="">
 
                                     <div class="badge badge-circle bg-primary border-outline position-absolute bottom-0 end-0">
-                                        @@include("../../assets/img/icons/image.svg")
+                                        <img src="{{ asset('assets/img/icons/image.svg') }}" alt="Image">
                                     </div>
                                 </a>
                             </div>
@@ -220,7 +220,7 @@
 
                                     <div class="dropdown ms-5">
                                         <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            @@include("../../assets/img/icons/more-horizontal.svg")
+                                            <img src="{{ asset('assets/img/icons/more-horizontal.svg') }}" alt="More Horizontal">
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">Show less often</a></li>
@@ -246,7 +246,7 @@
                                     <img class="avatar-img" src="assets/img/avatars/9.jpg" alt="">
 
                                     <div class="badge badge-circle bg-primary border-outline position-absolute bottom-0 end-0">
-                                        @@include("../../assets/img/icons/message-circle.svg")
+                                        <img src="{{ asset('assets/img/icons/message-circle.svg') }}" alt="Message Circle">
                                     </div>
                                 </a>
                             </div>
@@ -265,7 +265,7 @@
 
                                     <div class="dropdown ms-5">
                                         <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            @@include("../../assets/img/icons/more-horizontal.svg")
+                                            <img src="{{ asset('assets/img/icons/more-horizontal.svg') }}" alt="More Horizontal">
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">Show less often</a></li>
@@ -289,11 +289,11 @@
                                 <!-- Avatar -->
                                 <a href="#tab-settings" class="avatar avatar-badged" data-theme-toggle="tab">
                                     <span class="avatar-text bg-danger">
-                                        @@include("../../assets/img/icons/bell.svg")
+                                        <img src="{{ asset('assets/img/icons/bell.svg') }}" alt="Bell">
                                     </span>
 
                                     <div class="badge badge-circle bg-danger border-outline position-absolute bottom-0 end-0">
-                                        @@include("../../assets/img/icons/power.svg")
+                                        <img src="{{ asset('assets/img/icons/power.svg') }}" alt="Power">
                                     </div>
                                 </a>
                             </div>
@@ -313,7 +313,7 @@
 
                                     <div class="dropdown ms-5">
                                         <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            @@include("../../assets/img/icons/more-horizontal.svg")
+                                            <img src="{{ asset('assets/img/icons/more-horizontal.svg') }}" alt="More Horizontal">
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#">Show less often</a></li>

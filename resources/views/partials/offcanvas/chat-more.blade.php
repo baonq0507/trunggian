@@ -2,7 +2,7 @@
     <!-- Offcanvas Header -->
     <div class="offcanvas-header py-4 py-lg-7 border-bottom">
         <a class="icon icon-lg text-muted" href="#" data-bs-dismiss="offcanvas">
-            @@include("../../assets/img/icons/chevron-left.svg")
+            <img src="{{ asset('assets/img/icons/chevron-left.svg') }}" alt="Chevron Left">
         </a>
 
         <div class="visibility-xl-invisible overflow-hidden text-center">
@@ -13,7 +13,7 @@
         <!-- Dropdown -->
         <div class="dropdown">
             <a class="icon icon-lg text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                @@include("../../assets/img/icons/more-vertical.svg")
+                <img src="{{ asset('assets/img/icons/more-vertical.svg') }}" alt="More Vertical">
             </a>
 
             <ul class="dropdown-menu">
@@ -21,7 +21,7 @@
                     <a href="#" class="dropdown-item d-flex align-items-center">
                         Edit
                         <div class="icon ms-auto">
-                            @@include("../../assets/img/icons/edit-3.svg")
+                            <img src="{{ asset('assets/img/icons/edit-3.svg') }}" alt="Edit 3">
                         </div>
                     </a>
                 </li>
@@ -29,7 +29,7 @@
                     <a href="#" class="dropdown-item d-flex align-items-center">
                         Mute
                         <div class="icon ms-auto">
-                            @@include("../../assets/img/icons/bell.svg")
+                            <img src="{{ asset('assets/img/icons/bell.svg') }}" alt="Bell">
                         </div>
                     </a>
                 </li>
@@ -40,7 +40,7 @@
                     <a href="#" class="dropdown-item d-flex align-items-center text-danger">
                         Leave
                         <div class="icon ms-auto">
-                            @@include("../../assets/img/icons/log-out.svg")
+                            <img src="{{ asset('assets/img/icons/log-out.svg') }}" alt="Log Out">
                         </div>
                     </a>
                 </li>
@@ -59,7 +59,7 @@
                         <img src="assets/img/avatars/2.jpg" alt="#" class="avatar-img">
 
                         <a href="#" class="badge badge-lg badge-circle bg-primary text-white border-outline position-absolute bottom-0 end-0">
-                            @@include("../../assets/img/icons/plus.svg")
+                            <img src="{{ asset('assets/img/icons/plus.svg') }}" alt="Plus">
                         </a>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
 
                             <div class="col-auto">
                                 <div class="btn btn-sm btn-icon btn-dark">
-                                    @@include("../../assets/img/icons/phone-call.svg")
+                                    <img src="{{ asset('assets/img/icons/phone-call.svg') }}" alt="Phone Call">
                                 </div>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
 
                             <div class="col-auto">
                                 <div class="btn btn-sm btn-icon btn-dark">
-                                    @@include("../../assets/img/icons/globe.svg")
+                                    <img src="{{ asset('assets/img/icons/globe.svg') }}" alt="Globe">
                                 </div>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
 
                             <div class="col-auto">
                                 <div class="btn btn-sm btn-icon btn-dark">
-                                    @@include("../../assets/img/icons/mail.svg")
+                                    <img src="{{ asset('assets/img/icons/mail.svg') }}" alt="Mail">
                                 </div>
                             </div>
                         </div>
@@ -251,7 +251,7 @@
 
                                     <a href="#" class="avatar avatar-sm">
                                         <span class="avatar-text bg-primary">
-                                            @@include("../../assets/img/icons/file-text.svg")
+                                            <img src="{{ asset('assets/img/icons/file-text.svg') }}" alt="File Text">
                                         </span>
                                     </a>
                                 </div>
@@ -279,7 +279,7 @@
                             <div class="col-auto">
                                 <div class="dropdown">
                                     <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        @@include("../../assets/img/icons/more-vertical.svg")
+                                        <img src="{{ asset('assets/img/icons/more-vertical.svg') }}" alt="More Vertical">
                                     </a>
 
                                     <ul class="dropdown-menu">
@@ -287,7 +287,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="#">
                                                 Download
                                                 <div class="icon ms-auto">
-                                                    @@include("../../assets/img/icons/download.svg")
+                                                    <img src="{{ asset('assets/img/icons/download.svg') }}" alt="Download">
                                                 </div>
                                             </a>
                                         </li>
@@ -295,7 +295,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="#">
                                                 Share
                                                 <div class="icon ms-auto">
-                                                    @@include("../../assets/img/icons/share-2.svg")
+                                                    <img src="{{ asset('assets/img/icons/share-2.svg') }}" alt="Share 2">
                                                 </div>
                                             </a>
                                         </li>
@@ -304,7 +304,7 @@
                                             <a class="dropdown-item d-flex align-items-center text-danger" href="#">
                                                 <span class="me-auto">Delete</span>
                                                 <div class="icon">
-                                                    @@include("../../assets/img/icons/trash-2.svg")
+                                                    <img src="{{ asset('assets/img/icons/trash-2.svg') }}" alt="Trash 2">
                                                 </div>
                                             </a>
                                         </li>
@@ -328,7 +328,7 @@
 
                                     <a href="#" class="avatar avatar-sm">
                                         <span class="avatar-text bg-warning">
-                                            @@include("../../assets/img/icons/film.svg")
+                                            <img src="{{ asset('assets/img/icons/film.svg') }}" alt="Film">
                                         </span>
                                     </a>
                                 </div>
@@ -356,7 +356,7 @@
                             <div class="col-auto">
                                 <div class="dropdown">
                                     <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        @@include("../../assets/img/icons/more-vertical.svg")
+                                        <img src="{{ asset('assets/img/icons/more-vertical.svg') }}" alt="More Vertical">
                                     </a>
 
                                     <ul class="dropdown-menu">
@@ -364,7 +364,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="#">
                                                 Download
                                                 <div class="icon ms-auto">
-                                                    @@include("../../assets/img/icons/download.svg")
+                                                    <img src="{{ asset('assets/img/icons/download.svg') }}" alt="Download">
                                                 </div>
                                             </a>
                                         </li>
@@ -372,7 +372,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="#">
                                                 Share
                                                 <div class="icon ms-auto">
-                                                    @@include("../../assets/img/icons/share-2.svg")
+                                                    <img src="{{ asset('assets/img/icons/share-2.svg') }}" alt="Share 2">
                                                 </div>
                                             </a>
                                         </li>
@@ -381,7 +381,7 @@
                                             <a class="dropdown-item d-flex align-items-center text-danger" href="#">
                                                 <span class="me-auto">Delete</span>
                                                 <div class="icon">
-                                                    @@include("../../assets/img/icons/trash-2.svg")
+                                                    <img src="{{ asset('assets/img/icons/trash-2.svg') }}" alt="Trash 2">
                                                 </div>
                                             </a>
                                         </li>
@@ -405,7 +405,7 @@
 
                                     <a href="#" class="avatar avatar-sm">
                                         <span class="avatar-text bg-primary">
-                                            @@include("../../assets/img/icons/file-text.svg")
+                                            <img src="{{ asset('assets/img/icons/file-text.svg') }}" alt="File Text">
                                         </span>
                                     </a>
                                 </div>
@@ -433,7 +433,7 @@
                             <div class="col-auto">
                                 <div class="dropdown">
                                     <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        @@include("../../assets/img/icons/more-vertical.svg")
+                                        <img src="{{ asset('assets/img/icons/more-vertical.svg') }}" alt="More Vertical">
                                     </a>
 
                                     <ul class="dropdown-menu">
@@ -441,7 +441,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="#">
                                                 Download
                                                 <div class="icon ms-auto">
-                                                    @@include("../../assets/img/icons/download.svg")
+                                                    <img src="{{ asset('assets/img/icons/download.svg') }}" alt="Download">
                                                 </div>
                                             </a>
                                         </li>
@@ -449,7 +449,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="#">
                                                 Share
                                                 <div class="icon ms-auto">
-                                                    @@include("../../assets/img/icons/share-2.svg")
+                                                    <img src="{{ asset('assets/img/icons/share-2.svg') }}" alt="Share 2">
                                                 </div>
                                             </a>
                                         </li>
@@ -458,7 +458,7 @@
                                             <a class="dropdown-item d-flex align-items-center text-danger" href="#">
                                                 <span class="me-auto">Delete</span>
                                                 <div class="icon">
-                                                    @@include("../../assets/img/icons/trash-2.svg")
+                                                    <img src="{{ asset('assets/img/icons/trash-2.svg') }}" alt="Trash 2">
                                                 </div>
                                             </a>
                                         </li>
@@ -482,7 +482,7 @@
 
                                     <a href="#" class="avatar avatar-sm">
                                         <span class="avatar-text bg-warning">
-                                            @@include("../../assets/img/icons/film.svg")
+                                            <img src="{{ asset('assets/img/icons/film.svg') }}" alt="Film">
                                         </span>
                                     </a>
                                 </div>
@@ -510,7 +510,7 @@
                             <div class="col-auto">
                                 <div class="dropdown">
                                     <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        @@include("../../assets/img/icons/more-vertical.svg")
+                                        <img src="{{ asset('assets/img/icons/more-vertical.svg') }}" alt="More Vertical">
                                     </a>
 
                                     <ul class="dropdown-menu">
@@ -518,7 +518,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="#">
                                                 Download
                                                 <div class="icon ms-auto">
-                                                    @@include("../../assets/img/icons/download.svg")
+                                                    <img src="{{ asset('assets/img/icons/download.svg') }}" alt="Download">
                                                 </div>
                                             </a>
                                         </li>
@@ -526,7 +526,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="#">
                                                 Share
                                                 <div class="icon ms-auto">
-                                                    @@include("../../assets/img/icons/share-2.svg")
+                                                    <img src="{{ asset('assets/img/icons/share-2.svg') }}" alt="Share 2">
                                                 </div>
                                             </a>
                                         </li>
@@ -535,7 +535,7 @@
                                             <a class="dropdown-item d-flex align-items-center text-danger" href="#">
                                                 <span class="me-auto">Delete</span>
                                                 <div class="icon">
-                                                    @@include("../../assets/img/icons/trash-2.svg")
+                                                    <img src="{{ asset('assets/img/icons/trash-2.svg') }}" alt="Trash 2">
                                                 </div>
                                             </a>
                                         </li>
@@ -559,7 +559,7 @@
 
                                     <a href="#" class="avatar avatar-sm">
                                         <span class="avatar-text bg-success">
-                                            @@include("../../assets/img/icons/image.svg")
+                                            <img src="{{ asset('assets/img/icons/image.svg') }}" alt="Image">
                                         </span>
                                     </a>
                                 </div>
@@ -587,7 +587,7 @@
                             <div class="col-auto">
                                 <div class="dropdown">
                                     <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        @@include("../../assets/img/icons/more-vertical.svg")
+                                        <img src="{{ asset('assets/img/icons/more-vertical.svg') }}" alt="More Vertical">
                                     </a>
 
                                     <ul class="dropdown-menu">
@@ -595,7 +595,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="#">
                                                 Download
                                                 <div class="icon ms-auto">
-                                                    @@include("../../assets/img/icons/download.svg")
+                                                    <img src="{{ asset('assets/img/icons/download.svg') }}" alt="Download">
                                                 </div>
                                             </a>
                                         </li>
@@ -603,7 +603,7 @@
                                             <a class="dropdown-item d-flex align-items-center" href="#">
                                                 Share
                                                 <div class="icon ms-auto">
-                                                    @@include("../../assets/img/icons/share-2.svg")
+                                                    <img src="{{ asset('assets/img/icons/share-2.svg') }}" alt="Share 2">
                                                 </div>
                                             </a>
                                         </li>
@@ -612,7 +612,7 @@
                                             <a class="dropdown-item d-flex align-items-center text-danger" href="#">
                                                 <span class="me-auto">Delete</span>
                                                 <div class="icon">
-                                                    @@include("../../assets/img/icons/trash-2.svg")
+                                                    <img src="{{ asset('assets/img/icons/trash-2.svg') }}" alt="Trash 2">
                                                 </div>
                                             </a>
                                         </li>

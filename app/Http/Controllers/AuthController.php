@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\RegisterSuccessMail;
 use App\Models\UserVerify;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Cookie;
 class AuthController extends Controller
 {
     
@@ -67,9 +70,9 @@ class AuthController extends Controller
         if($userVerify && !$userVerify->is_used){
             $userVerify->is_used = true;
             $userVerify->save();
-            return redirect()->route('auth.login')->with('success','Xác thực tài khoản thành công, bạn có thể đăng nhập vào hệ thống');
+            return redirect()->route('login')->with('success','Xác thực tài khoản thành công, bạn có thể đăng nhập vào hệ thống');
         }
-        return redirect()->route('auth.login')->with('error','Xác thực tài khoản thất bại');
+        return redirect()->route('login')->with('error','Xác thực tài khoản thất bại');
     }
 
     public function login(Request $request)
@@ -87,10 +90,13 @@ class AuthController extends Controller
         ]);
 
         $user = User::where('email',$request->email)->first();
-        if($user && Hash::check($request->password,$user->password)){
+        if(Auth::attempt($request->only('email','password'))){
+            $token = JWTAuth::fromUser($user);
+            // lưu cookie bằng thời gian session SESSION_LIFETIME
+            Cookie::queue('token', $token, env('SESSION_LIFETIME'));
             return redirect()->route('home')->with('success','Đăng nhập thành công');
         }
-        return redirect()->route('auth.login')->with('error','Đăng nhập thất bại');
+        return redirect()->route('login')->with('error','Đăng nhập thất bại');
     }
 }
 

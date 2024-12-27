@@ -11,7 +11,7 @@
             <!-- Search -->
             <div class="mb-6">
                 <div class="mb-5">
-                    @@include("../components/search.html")
+                    @include('partials.components.search')
                 </div>
 
                 <ul class="nav nav-pills nav-justified" role="tablist">
@@ -36,17 +36,17 @@
                     <div class="card border-0">
                         <div class="profile">
                             <div class="profile-img text-primary rounded-top">
-                                @@include("../../assets/img/core/card-header.svg")
+                                <img src="{{ asset('assets/img/core/card-header.svg') }}" alt="Card Header">
                             </div>
 
                             <div class="profile-body p-0">
                                 <div class="avatar avatar-lg">
                                     <span class="avatar-text bg-primary">
-                                        @@include("../../assets/img/icons/image.svg")
+                                        <img src="{{ asset('assets/img/icons/image.svg') }}" alt="Image">
                                     </span>
 
                                     <div class="badge badge-lg badge-circle bg-primary border-outline position-absolute bottom-0 end-0">
-                                        @@include("../../assets/img/icons/plus.svg")
+                                        <img src="{{ asset('assets/img/icons/plus.svg') }}" alt="Plus">
                                     </div>
 
                                     <input id="upload-chat-img" class="d-none" type="file">
@@ -90,7 +90,7 @@
                                 <div class="row gx-5">
                                     <div class="col-auto">
                                         <div class="btn btn-sm btn-icon btn-dark">
-                                            @@include("../../assets/img/icons/lock.svg")
+                                            <img src="{{ asset('assets/img/icons/lock.svg') }}" alt="Lock">
                                         </div>
                                     </div>
                                     <div class="col">
@@ -116,52 +116,43 @@
                             <small class="text-uppercase text-muted">B</small>
                         </div>
 
-                        @@loop("../components/friend-checkbox.html", [
-                            { "id": "1", "name": "Bill Marrow", "abbr": "", "avatar": "assets/img/avatars/6.jpg", "status": "last seen 3 days ago", "online": "" }
-                        ])
+                        @include('partials.components.member', ['id' => '1', 'name' => 'Bill Marrow', 'abbr' => '', 'avatar' => 'assets/img/avatars/6.jpg', 'status' => 'last seen 3 days ago', 'online' => ''])
 
                         <div class="my-5">
                             <small class="text-uppercase text-muted">D</small>
                         </div>
 
-                        @@loop("../components/friend-checkbox.html", [
-                            { "id": "2", "name": "Damian Binder", "abbr": "", "avatar": "assets/img/avatars/5.jpg", "status": "last seen within a week", "online": "" },
-                            { "id": "3", "name": "Don Knight", "abbr": "D", "avatar": "", "status": "online", "online": "avatar-online" }
-                        ])
+                        @include('partials.components.member', ['id' => '2', 'name' => 'Damian Binder', 'abbr' => '', 'avatar' => 'assets/img/avatars/5.jpg', 'status' => 'last seen within a week', 'online' => ''])
 
                         <div class="my-5">
                             <small class="text-uppercase text-muted">E</small>
                         </div>
 
-                        @@loop("../components/friend-checkbox.html", [
-                            { "id": "4", "name": "Elise Dennis", "abbr": "", "avatar": "assets/img/avatars/8.jpg", "status": "online", "online": "avatar-online" }
-                        ])
+                        @include('partials.components.member', ['id' => '4', 'name' => 'Elise Dennis', 'abbr' => '', 'avatar' => 'assets/img/avatars/8.jpg', 'status' => 'online', 'online' => 'avatar-online'])
 
                         <div class="my-5">
                             <small class="text-uppercase text-muted">M</small>
                         </div>
 
-                        @@loop("../components/friend-checkbox.html", [
-                            { "id": "6", "name": "Marshall Wallaker", "abbr": "M", "avatar": "", "status": "last seen within a month", "online": "" },
-                            { "id": "5", "name": "Mila White", "abbr": "", "avatar": "assets/img/avatars/11.jpg", "status": "last seen a long time ago", "online": "" }
-                        ])
+                        @include('partials.components.member', ['id' => '6', 'name' => 'Marshall Wallaker', 'abbr' => 'M', 'avatar' => '', 'status' => 'last seen within a month', 'online' => ''])
+
+                        @include('partials.components.member', ['id' => '5', 'name' => 'Mila White', 'abbr' => '', 'avatar' => 'assets/img/avatars/11.jpg', 'status' => 'last seen a long time ago', 'online' => ''])
 
                         <div class="my-5">
                             <small class="text-uppercase text-muted">O</small>
                         </div>
 
-                        @@loop("../components/friend-checkbox.html", [
-                            { "id": "7", "name": "Ollie Chandler", "abbr": "O", "avatar": "", "status": "online", "online": "avatar-online" }
-                        ])
+                        @include('partials.components.member', ['id' => '7', 'name' => 'Ollie Chandler', 'abbr' => 'O', 'avatar' => '', 'status' => 'online', 'online' => 'avatar-online'])
 
                         <div class="my-5">
                             <small class="text-uppercase text-muted">W</small>
                         </div>
 
-                        @@loop("../components/friend-checkbox.html", [
-                            { "id": "8", "name": "Warren White", "abbr": "", "avatar": "assets/img/avatars/4.jpg", "status": "last seen recently", "online": "" },
-                            { "id": "9", "name": "William Wright", "abbr": "", "avatar": "assets/img/avatars/7.jpg", "status": "online", "online": "avatar-online" }
-                        ])
+                        @include('partials.components.member', ['id' => '8', 'name' => 'Warren White', 'abbr' => '', 'avatar' => 'assets/img/avatars/4.jpg', 'status' => 'last seen recently', 'online' => ''])
+
+                        @include('partials.components.member', ['id' => '9', 'name' => 'William Wright', 'abbr' => '', 'avatar' => 'assets/img/avatars/7.jpg', 'status' => 'online', 'online' => 'avatar-online'])
+
+                        @include('partials.components.member', ['id' => '10', 'name' => 'Winton Wilkinson', 'abbr' => 'W', 'avatar' => '', 'status' => 'online', 'online' => 'avatar-online'])
                     </nav>
                 </div>
             </div>
@@ -175,7 +166,7 @@
         <button class="btn btn-lg btn-primary w-100 d-flex align-items-center" type="button">
             Start chat
             <span class="icon ms-auto">
-                @@include("../../assets/img/icons/chevron-right.svg")
+                <img src="{{ asset('assets/img/icons/chevron-right.svg') }}" alt="Chevron Right">
             </span>
         </button>
     </div>

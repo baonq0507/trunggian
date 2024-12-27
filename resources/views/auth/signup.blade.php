@@ -9,7 +9,7 @@
         <div class="row align-items-center justify-content-center min-vh-100 gx-0">
 
             <div class="col-12 col-md-5 col-lg-4">
-                <form action="{{route("auth.register") }}" method="post">
+                <form action="{{route("register") }}" method="post">
                     @csrf
 
                     <div class="card card-shadow border-0">

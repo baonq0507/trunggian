@@ -9,7 +9,7 @@
 
             <!-- Search -->
             <div class="mb-6">
-                @@include("../components/search.html")
+                @include('partials.components.search')
             </div>
 
             <!-- Chats -->
@@ -20,7 +20,7 @@
                         <div class="row gx-5">
                             <div class="col-auto">
                                 <div class="avatar avatar-online">
-                                    <img src="assets/img/avatars/7.jpg" alt="#" class="avatar-img">
+                                    <img src="{{ asset('assets/img/avatars/7.jpg') }}" alt="#" class="avatar-img">
                                 </div>
                             </div>
 
@@ -47,7 +47,7 @@
                         <div class="row align-items-center gx-4">
                             <div class="col-auto">
                                 <div class="avatar avatar-xs">
-                                    <img class="avatar-img" src="assets/img/avatars/bootstrap.svg" alt="Bootstrap Community">
+                                    <img class="avatar-img" src="{{ asset('assets/img/avatars/bootstrap.svg') }}" alt="Bootstrap Community">
                                 </div>
                             </div>
 
@@ -58,15 +58,15 @@
                             <div class="col-auto">
                                 <div class="avatar-group">
                                     <div class="avatar avatar-xs">
-                                        <img src="assets/img/avatars/12.jpg" alt="#" class="avatar-img">
+                                        <img src="{{ asset('assets/img/avatars/12.jpg') }}" alt="#" class="avatar-img">
                                     </div>
 
                                     <div class="avatar avatar-xs">
-                                        <img src="assets/img/avatars/11.jpg" alt="#" class="avatar-img">
+                                        <img src="{{ asset('assets/img/avatars/11.jpg') }}" alt="#" class="avatar-img">
                                     </div>
 
                                     <div class="avatar avatar-xs">
-                                        <img src="assets/img/avatars/9.jpg" alt="#" class="avatar-img">
+                                        <img src="{{ asset('assets/img/avatars/9.jpg') }}" alt="#" class="avatar-img">
                                     </div>
 
                                     <div class="avatar avatar-xs">
@@ -85,7 +85,7 @@
                         <div class="row gx-5">
                             <div class="col-auto">
                                 <div class="avatar avatar-online">
-                                    <img src="assets/img/avatars/6.jpg" alt="#" class="avatar-img">
+                                    <img src="{{ asset('assets/img/avatars/6.jpg') }}" alt="#" class="avatar-img">
                                 </div>
                             </div>
 
@@ -116,7 +116,7 @@
                         <div class="row gx-5">
                             <div class="col-auto">
                                 <div class="avatar avatar-online">
-                                    <img src="assets/img/avatars/8.jpg" alt="#" class="avatar-img">
+                                    <img src="{{ asset('assets/img/avatars/8.jpg') }}" alt="#" class="avatar-img">
                                 </div>
                             </div>
 
@@ -144,11 +144,11 @@
                             <div class="col-auto">
                                 <div class="avatar-group-trigon avatar-group-trigon-sm">
                                     <div class="avatar avatar-sm">
-                                        <img class="avatar-img" src="assets/img/avatars/7.jpg" alt="#">
+                                        <img class="avatar-img" src="{{ asset('assets/img/avatars/7.jpg') }}" alt="#">
                                     </div>
 
                                     <div class="avatar avatar-sm">
-                                        <img class="avatar-img" src="assets/img/avatars/9.jpg" alt="#">
+                                        <img class="avatar-img" src="{{ asset('assets/img/avatars/9.jpg') }}" alt="#">
                                     </div>
 
                                     <div class="avatar avatar-sm">
@@ -180,7 +180,7 @@
                         <div class="row gx-5">
                             <div class="col-auto">
                                 <div class="avatar">
-                                    <img src="assets/img/avatars/4.jpg" alt="#" class="avatar-img">
+                                    <img src="{{ asset('assets/img/avatars/4.jpg') }}" alt="#" class="avatar-img">
                                 </div>
                             </div>
 
@@ -207,7 +207,7 @@
                         <div class="row gx-5">
                             <div class="col-auto">
                                 <div class="avatar">
-                                    <img src="assets/img/avatars/11.jpg" alt="#" class="avatar-img">
+                                    <img src="{{ asset('assets/img/avatars/11.jpg') }}" alt="#" class="avatar-img">
                                 </div>
                             </div>
 
@@ -234,7 +234,7 @@
                         <div class="row gx-5">
                             <div class="col-auto">
                                 <div class="avatar avatar-online">
-                                    <img src="assets/img/avatars/5.jpg" alt="#" class="avatar-img">
+                                    <img src="{{ asset('assets/img/avatars/5.jpg') }}" alt="#" class="avatar-img">
                                 </div>
                             </div>
 

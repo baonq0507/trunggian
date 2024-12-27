@@ -42,7 +42,7 @@ class RegisterSuccessMail extends Mailable
             view: 'mail.register-success',
             with: [
                 'name' => $this->data['name'] ??'',
-                'link' => route('auth.verify',['token'=>$this->data['token']])
+                'link' => route('verify',['token'=>$this->data['token']])
             ]
         );
     }

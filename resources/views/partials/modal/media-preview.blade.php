@@ -10,7 +10,7 @@
                     <!-- Dropdown -->
                     <div class="dropdown">
                         <a class="icon text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            @@include("../../assets/img/icons/more-vertical.svg")
+                            <img src="{{ asset('assets/img/icons/more-vertical.svg') }}" alt="More Vertical">
                         </a>
 
                         <ul class="dropdown-menu">
@@ -18,7 +18,7 @@
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     Download
                                     <div class="icon ms-auto">
-                                        @@include("../../assets/img/icons/download-cloud.svg")
+                                        <img src="{{ asset('assets/img/icons/download-cloud.svg') }}" alt="Download Cloud">
                                     </div>
                                 </a>
                             </li>
@@ -26,7 +26,7 @@
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     Share
                                     <div class="icon ms-auto">
-                                        @@include("../../assets/img/icons/share-2.svg")
+                                        <img src="{{ asset('assets/img/icons/share-2.svg') }}" alt="Share 2">
                                     </div>
                                 </a>
                             </li>
@@ -35,7 +35,7 @@
                                 <a class="dropdown-item d-flex align-items-center text-danger" href="#">
                                     <span class="me-auto">Delete</span>
                                     <div class="icon">
-                                        @@include("../../assets/img/icons/trash-2.svg")
+                                        <img src="{{ asset('assets/img/icons/trash-2.svg') }}" alt="Trash 2">
                                     </div>
                                 </a>
                             </li>

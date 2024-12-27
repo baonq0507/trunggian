@@ -9,7 +9,7 @@
 
             <!-- Search -->
             <div class="mb-6">
-                @@include("../components/search.html")
+                @include('partials.components.search')
             </div>
 
             <!-- Profile -->
@@ -21,7 +21,7 @@
                                 <img src="assets/img/avatars/1.jpg" alt="#" class="avatar-img">
 
                                 <div class="badge badge-circle bg-secondary border-outline position-absolute bottom-0 end-0">
-                                    @@include("../../assets/img/icons/image.svg")
+                                    <img src="{{ asset('assets/img/icons/image.svg') }}" alt="Image">
                                 </div>
                                 <input id="upload-profile-photo" class="d-none" type="file">
                                 <label class="stretched-label mb-0" for="upload-profile-photo"></label>
@@ -34,7 +34,7 @@
                         <div class="col-auto">
                             <a href="#" class="text-muted">
                                 <div class="icon">
-                                    @@include("../../assets/img/icons/log-out.svg")
+                                    <img src="{{ asset('assets/img/icons/log-out.svg') }}" alt="Log Out">
                                 </div>
                             </a>
                         </div>
@@ -133,10 +133,10 @@
                                         <div class="col-auto">
                                             <a class="switcher-btn text-reset" href="#!" title="Themes">
                                                 <div class="switcher-icon switcher-icon-dark icon icon-lg d-none" data-theme-mode="dark">
-                                                    @@include("../../assets/img/icons/moon.svg")
+                                                    <img src="{{ asset('assets/img/icons/moon.svg') }}" alt="Moon">
                                                 </div>
                                                 <div class="switcher-icon switcher-icon-light icon icon-lg d-none" data-theme-mode="light">
-                                                    @@include("../../assets/img/icons/sun.svg")
+                                                    <img src="{{ asset('assets/img/icons/sun.svg') }}" alt="Sun">
                                                 </div>
                                             </a>
                                         </div>
@@ -224,7 +224,7 @@
                         <a href="#" class="text-muted small">Clear storage</a>
 
                         <div class="icon icon-xs">
-                            @@include("../../assets/img/icons/bar-chart-2.svg")
+                            <img src="{{ asset('assets/img/icons/bar-chart-2.svg') }}" alt="Bar Chart 2">
                         </div>
                     </div>
                 </div>
@@ -373,7 +373,7 @@
                         <a href="#" class="text-muted small">End all sessions</a>
 
                         <div class="icon icon-xs">
-                            @@include("../../assets/img/icons/log-out.svg")
+                            <img src="{{ asset('assets/img/icons/log-out.svg') }}" alt="Log Out">
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,7 @@
         <div class="row align-items-center justify-content-center min-vh-100 gx-0">
 
             <div class="col-12 col-md-5 col-lg-4">
-                <form action="{{route("auth.login") }}" method="post">
+                <form action="{{route("login") }}" method="post">
                     @csrf
                     <div class="card card-shadow border-0">
                         @if(session('success'))
@@ -54,7 +54,7 @@
 
                 <!-- Text -->
                 <div class="text-center mt-8">
-                    <p>Don't have an account yet? <a href="{{route("auth.register")}}">Sign up</a></p>
+                    <p>Don't have an account yet? <a href="{{route("register")}}">Sign up</a></p>
                     <p><a href="./password-reset.html">Forgot Password?</a></p>
                 </div>
             </div>

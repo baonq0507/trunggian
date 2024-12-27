@@ -7,7 +7,7 @@
                 <!-- Header -->
                 <div class="profile modal-gx-n">
                     <div class="profile-img text-primary rounded-top-xl">
-                        @@include("../../assets/img/core/card-header.svg")
+                        <img src="{{ asset('assets/img/core/card-header.svg') }}" alt="Card Header">
 
                         <div class="position-absolute top-0 start-0 p-5">
                             <button type="button" class="btn-close btn-close-white btn-close-arrow opacity-100" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -16,10 +16,10 @@
 
                     <div class="profile-body">
                         <div class="avatar avatar-xl">
-                            <img class="avatar-img" src="@@webRoot/assets/img/avatars/9.jpg" alt="#">
+                            <img class="avatar-img" src="{{ asset('assets/img/avatars/9.jpg') }}" alt="#">
 
                             <a href="#" class="badge badge-lg badge-circle bg-primary text-white border-outline position-absolute bottom-0 end-0">
-                                @@include("../../assets/img/icons/plus.svg")
+                                <img src="{{ asset('assets/img/icons/plus.svg') }}" alt="Plus">
                             </a>
                         </div>
 
@@ -42,7 +42,7 @@
 
                             <div class="col-auto">
                                 <div class="btn btn-sm btn-icon btn-dark">
-                                    @@include("../../assets/img/icons/globe.svg")
+                                    <img src="{{ asset('assets/img/icons/globe.svg') }}" alt="Globe">
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
 
                             <div class="col-auto">
                                 <div class="btn btn-sm btn-icon btn-dark">
-                                    @@include("../../assets/img/icons/mail.svg")
+                                    <img src="{{ asset('assets/img/icons/mail.svg') }}" alt="Mail">
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
 
                             <div class="col-auto">
                                 <div class="btn btn-sm btn-icon btn-dark">
-                                    @@include("../../assets/img/icons/phone-call.svg")
+                                    <img src="{{ asset('assets/img/icons/phone-call.svg') }}" alt="Phone Call">
                                 </div>
                             </div>
                         </div>
