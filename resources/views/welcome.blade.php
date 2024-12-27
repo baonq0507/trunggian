@@ -1470,7 +1470,7 @@
             <!-- Sidebar -->
 
             <!-- Chat -->
-            <main class="main is_visible">
+            <main class="main">
                 <div class="container h-100">
 
                     <div class="d-flex flex-column h-100 justify-content-center text-center">

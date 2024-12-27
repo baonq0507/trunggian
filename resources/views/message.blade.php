@@ -222,7 +222,7 @@
 @endsection
 
 @section('sidebar-right')
-<div class="offcanvas offcanvas-end offcanvas-aside" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvas-more">
+<div class="offcanvas offcanvas-end offcanvas-aside show" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvas-more">
             <div class="offcanvas-header py-4 py-lg-7 border-bottom">
                 <a class="icon icon-lg text-muted" href="#" data-bs-dismiss="offcanvas">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left">
