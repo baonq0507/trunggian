@@ -1,6 +1,7 @@
 <aside class="sidebar bg-light">
     <div class="tab-content h-100" role="tablist">
 
+        <!-- Chats -->
         <div class="tab-pane fade h-100 show active" id="tab-content-chats" role="tabpanel">
             <div class="d-flex flex-column h-100 position-relative">
                 <div class="hide-scrollbar" id="channels-scroll" data-page="2">
