@@ -216,61 +216,61 @@
         <!-- Chat: Form -->
     </div>
     <!-- Chat: Footer -->
-     
+
 </div>
 
 @endsection
 
 @section('sidebar-right')
 <div class="offcanvas offcanvas-end offcanvas-aside" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvas-more">
-            <div class="offcanvas-header py-4 py-lg-7 border-bottom">
-                <a class="icon icon-lg text-muted" href="#" data-bs-dismiss="offcanvas">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </a>
+    <div class="offcanvas-header py-4 py-lg-7 border-bottom">
+        <a class="icon icon-lg text-muted" href="#" data-bs-dismiss="offcanvas">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </a>
 
-                <div class="visibility-xl-invisible overflow-hidden text-center">
-                    <h5 class="text-truncate">{{$channel->name}}</h5>
-                    <!-- <p class="text-truncate">last seen 5 minutes ago</p> -->
-                </div>
+        <div class="visibility-xl-invisible overflow-hidden text-center">
+            <h5 class="text-truncate">{{$channel->name}}</h5>
+            <!-- <p class="text-truncate">last seen 5 minutes ago</p> -->
+        </div>
 
 
-                <div class="dropdown">
-                    <a class="icon icon-lg text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
-                            <circle cx="12" cy="12" r="1"></circle>
-                            <circle cx="12" cy="5" r="1"></circle>
-                            <circle cx="12" cy="19" r="1"></circle>
-                        </svg>
+        <div class="dropdown">
+            <a class="icon icon-lg text-muted" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <circle cx="12" cy="5" r="1"></circle>
+                    <circle cx="12" cy="19" r="1"></circle>
+                </svg>
+            </a>
+
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#" class="dropdown-item d-flex align-items-center text-danger">
+                        Báo cáo
+                        <div class="icon ms-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                        </div>
                     </a>
+                </li>
+            </ul>
+        </div>
 
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#" class="dropdown-item d-flex align-items-center text-danger">
-                                Báo cáo
-                                <div class="icon ms-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
-                                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                        <polyline points="16 17 21 12 16 7"></polyline>
-                                        <line x1="21" y1="12" x2="9" y2="12"></line>
-                                    </svg>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    </div>
 
-            </div>
+    <div class="offcanvas-body hide-scrollbar">
 
-            <div class="offcanvas-body hide-scrollbar">
+        <div class="card border-0 mb-5">
+            <div class="card-body">
 
-                <div class="card border-0 mb-5">
-                    <div class="card-body">
-
-                        <div class="row gx-5">
-                            <div class="col-auto">
-                                <!-- <a href="#" class="avatar">
+                <div class="row gx-5">
+                    <div class="col-auto">
+                        <!-- <a href="#" class="avatar">
                                     <img class="avatar-img" src="{{asset('assets/img/avatars/11.jpg')}}" alt="">
 
                                     <div class="badge badge-circle bg-primary border-outline position-absolute bottom-0 end-0">
@@ -280,80 +280,80 @@
                                         </svg>
                                     </div>
                                 </a> -->
-                            </div>
-
-                            <div class="col">
-                                <div class="d-flex align-items-center mb-2">
-                                    <h5 class="me-auto mb-0">
-                                        <a href="#">{{$channel->name}}</a>
-                                    </h5>
-                                    <!-- <span class="extra-small text-muted ms-2">08:45 PM</span> -->
-                                </div>
-
-                                <div class="d-flex">
-                                    <div class="me-auto">Hoàn thành giao dịch.</div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="card-footer">
-                        <div class="row gx-4">
-                            <div class="col">
-                                <a href="#" class="btn btn-sm btn-soft-primary w-100">Không đồng ý</a>
-                            </div>
-                            <div class="col">
-                                <a href="#" class="btn btn-sm btn-primary w-100">Tôi đồng ý</a>
-                            </div>
+                    <div class="col">
+                        <div class="d-flex align-items-center mb-2">
+                            <h5 class="me-auto mb-0">
+                                <a href="#">{{$channel->name}}</a>
+                            </h5>
+                            <!-- <span class="extra-small text-muted ms-2">08:45 PM</span> -->
+                        </div>
+
+                        <div class="d-flex">
+                            <div class="me-auto">Hoàn thành giao dịch.</div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="card-footer">
+                <div class="row gx-4">
+                    <div class="col">
+                        <a href="#" class="btn btn-sm btn-soft-primary w-100">Không đồng ý</a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="btn btn-sm btn-primary w-100">Tôi đồng ý</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-                <div class="tab-content py-2" role="tablist">
-                    <div class="tab-pane fade show active" id="offcanvas-tab-profile" role="tabpanel">
+        <div class="tab-content py-2" role="tablist">
+            <div class="tab-pane fade show active" id="offcanvas-tab-profile" role="tabpanel">
 
-                        <ul class="list-group list-group-flush">
-                            <!-- // link join -->
-                            <li class="list-group-item">
-                            <div class="row align-items-center gx-6">
-                                    <div class="col">
-                                        <h5>Link tham gia</h5>
-                                        <a href="{{route('join.channel', $channel->slug)}}">{{route('join.channel', $channel->slug)}}</a>
-                                    </div>
+                <ul class="list-group list-group-flush">
+                    <!-- // link join -->
+                    <li class="list-group-item">
+                        <div class="row align-items-center gx-6">
+                            <div class="col">
+                                <h5>Link tham gia</h5>
+                                <a href="{{route('join.channel', $channel->slug)}}">{{route('join.channel', $channel->slug)}}</a>
+                            </div>
 
-                                    <div class="col-auto">
-                                        <div class="btn btn-sm btn-icon btn-dark copy-link" data-link="{{route('join.channel', $channel->slug)}}">
-                                            <i class="fa fa-copy"></i>
-                                        </div>
-                                    </div>
-                                </>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="row align-items-center gx-6">
-                                    <div class="col">
-                                        <h5>Giao dịch</h5>
-                                        <p>{{$channel->type == 'buy' ? 'Mua' : 'Bán'}}</p>
-                                    </div>
+                            <div class="col-auto">
+                                <div class="btn btn-sm btn-icon btn-dark copy-link" data-link="{{route('join.channel', $channel->slug)}}">
+                                    <i class="fa fa-copy"></i>
+                                </div>
+                            </div>
+                            </>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row align-items-center gx-6">
+                            <div class="col">
+                                <h5>Giao dịch</h5>
+                                <p>{{$channel->type == 'buy' ? 'Mua' : 'Bán'}}</p>
+                            </div>
 
-                                    <!-- <div class="col-auto">
+                            <!-- <div class="col-auto">
                                         <div class="btn btn-sm btn-icon btn-dark">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone-call">
                                                 <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                                             </svg>
                                         </div>
                                     </div> -->
-                                </div>
-                            </li>
+                        </div>
+                    </li>
 
-                            <li class="list-group-item">
-                                <div class="row align-items-center gx-6">
-                                    <div class="col">
-                                        <h5>Số tiền</h5>
-                                        <p>{{number_format($channel->amount, 0, ',', '.')}} VNĐ</p>
-                                    </div>
+                    <li class="list-group-item">
+                        <div class="row align-items-center gx-6">
+                            <div class="col">
+                                <h5>Số tiền</h5>
+                                <p>{{number_format($channel->amount, 0, ',', '.')}} VNĐ</p>
+                            </div>
 
-                                    <!-- <div class="col-auto">
+                            <!-- <div class="col-auto">
                                         <div class="btn btn-sm btn-icon btn-dark">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe">
                                                 <circle cx="12" cy="12" r="10"></circle>
@@ -362,17 +362,17 @@
                                             </svg>
                                         </div>
                                     </div> -->
-                                </div>
-                            </li>
+                        </div>
+                    </li>
 
-                            <li class="list-group-item">
-                                <div class="row align-items-center gx-6">
-                                    <div class="col">
-                                        <h5>Trạng thái</h5>
-                                        <p>{{$channel->status == 'trading' ? 'Đang giao dịch' : ($channel->status == 'pending' ? 'Chờ xác nhận' : 'Đã hoàn thành')}}</p>
-                                    </div>
+                    <li class="list-group-item">
+                        <div class="row align-items-center gx-6">
+                            <div class="col">
+                                <h5>Trạng thái</h5>
+                                <p>{{$channel->status == 'trading' ? 'Đang giao dịch' : ($channel->status == 'pending' ? 'Chờ xác nhận' : 'Đã hoàn thành')}}</p>
+                            </div>
 
-                                    <!-- <div class="col-auto">
+                            <!-- <div class="col-auto">
                                         <div class="btn btn-sm btn-icon btn-dark">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
                                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -380,19 +380,19 @@
                                             </svg>
                                         </div>
                                     </div> -->
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="list-group list-group-flush border-top mt-8">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="list-group list-group-flush border-top mt-8">
 
-                            <li class="list-group-item">
-                                <a href="#" class="text-danger">Báo cáo</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                    <li class="list-group-item">
+                        <a href="#" class="text-danger">Báo cáo</a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </div>
+</div>
 
 @endsection
 
