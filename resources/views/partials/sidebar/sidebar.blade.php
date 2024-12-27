@@ -1,7 +1,7 @@
 <aside class="sidebar bg-light">
     <div class="tab-content h-100" role="tablist">
         <!-- Create -->
-        <div class="tab-pane fade h-100" id="tab-content-create-chat" role="tabpanel">
+        <div class="tab-pane fade h-100 show active" id="tab-content-create-chat" role="tabpanel">
             <div class="d-flex flex-column h-100">
                 <div class="hide-scrollbar">
 
@@ -13,7 +13,7 @@
                         </div>
 
                         <!-- Search -->
-                        <div class="mb-6">
+                        <div class="mb-6">  
                             <div class="mb-5">
                                 <form action="#">
                                     <div class="input-group">
@@ -452,7 +452,7 @@
         </div>
 
         <!-- Chats -->
-        <div class="tab-pane fade h-100 show active" id="tab-content-chats" role="tabpanel">
+        <div class="tab-pane fade h-100 show " id="tab-content-chats" role="tabpanel">
             <div class="d-flex flex-column h-100 position-relative">
                 <div class="hide-scrollbar" id="channels-scroll" data-page="2">
 
