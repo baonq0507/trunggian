@@ -131,6 +131,22 @@ class ChannelContrller extends Controller
     {
         dd($request->all());
     }
+
+    public function updateStatus(Request $request, $slug)
+    {
+        $user = Auth::user();
+        $channel = Channel::where('slug', $slug)->firstOrFail();
+        if($channel->userChannels()->where('user_id', $user->id)->first()->status == 'trading'){
+            $channel->userChannels()->where('user_id', $user->id)->update(['status' => $request->status]);
+            return response()->json(['message' => 'Cập nhật trạng thái thành công'], 200);
+        }
+        // nếu tất cả user đồng ý
+        if($channel->userChannels()->where('status', 'completed')->count() == $channel->userChannels()->count()){
+            $channel->update(['status' => 'completed']);
+            return response()->json(['message' => 'Cập nhật trạng thái thành công'], 200);
+        }
+        return response()->json(['message' => 'Bạn không thể cập nhật trạng thái'], 422);
+    }
 }
 
 

@@ -411,4 +411,42 @@ $(document).ready(function () {
     });
 
 
+    // change jquery
+    $('#reject-btn').click(function () {
+        $('#status-input').val('rejected');
+    });
+    $('#agree-btn').click(function () {
+        $('#status-input').val('completed');
+    });
+
+
+    $('#status-form').submit(function (e) {
+        e.preventDefault();
+        const status = $('#status-input').val();
+        const action = $(this).data('action');
+        const token = $('meta[name="csrf-token"]').attr('content');
+        put(action, {
+            status: status,
+            _token: token
+        }).then(function (response) {
+            console.log(response);
+            if(response.status == 200){
+                Swal.fire({
+                    title: 'Thành công',
+                    text: response.message,
+                    icon: 'success',
+                });
+                setTimeout(function () {
+                    window.location.reload();
+                }, 1500);
+            }
+        }).catch(function (error) {
+            Swal.fire({
+                title: 'Thất bại',
+                text: error.responseJSON.message,
+                icon: 'error',
+            });
+        });
+    });
+
 });

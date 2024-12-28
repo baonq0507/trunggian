@@ -24,4 +24,5 @@ Route::middleware(['auth', 'shareChannels'])->group(function () {
     Route::get('reject/{id}',[ChannelContrller::class, 'rejectInvite'])->name('reject.invite');
     Route::get('channels/load',[ChannelContrller::class, 'loadChannels'])->name('channels.load');
     Route::post('upload/message',[ChannelContrller::class, 'uploadMessage'])->name('upload.message');
+    Route::put('update/status/{slug}',[ChannelContrller::class, 'updateStatus'])->name('update.status');
 });

@@ -19,6 +19,7 @@
     <!-- Template CSS -->
     <link class="css-lt" rel="stylesheet" href="{{asset('assets/css/template.bundle.css')}}" media="(prefers-color-scheme: light)">
     <link class="css-dk" rel="stylesheet" href="{{asset('assets/css/template.dark.bundle.css')}}" media="(prefers-color-scheme: dark)">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Theme mode -->
     <script>
