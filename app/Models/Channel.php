@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 
 class Channel extends Model
 {
-    protected $fillable = ['name', 'slug', 'description', 'image', 'is_private', 'is_active', 'status', 'type', 'created_by'];
+    protected $fillable = ['name', 'slug', 'description', 'image', 'is_private', 'is_active', 'status', 'type', 'created_by', 'amount'];
 
     const STATUS = [
         'pending' => 'Đang chờ xác nhận',
