@@ -11,7 +11,6 @@ var fs = require('fs');
 var path = require('path');
 var socket = require('socket.io');
 var db = require('../database/connection');
-var cors = require('cors');
 var user = require('../repository/user');
 /**
  * Get port from environment and store in Express.
@@ -20,18 +19,13 @@ var user = require('../repository/user');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
+
+
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app, {
-  cors: {
-    origin: 'http://trunggian.test',
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
-  }
-});
+var server = http.createServer(app);
 
 var io = socket(server);
 io.use((socket, next) => {

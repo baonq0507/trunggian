@@ -437,7 +437,9 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-
+    <script>
+        const URL_UPLOAD = "{{env('URL_UPLOAD')}}";
+    </script>
     <script src="{{asset('assets/js/vendor.js')}}"></script>
     <script src="{{asset('assets/js/template.js')}}"></script>
     <script>
@@ -454,9 +456,6 @@
     <script>
         const chanelRoute = "{{route('channels.load')}}";
     </script>
-
-
-
 
     <script src="{{ asset('assets/js/app.js') }}"></script>
 

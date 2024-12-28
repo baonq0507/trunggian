@@ -34,23 +34,38 @@ module.exports = {
 
                 const channel = rows[0];
 
-                db.query(`INSERT INTO messgaes (channel_id, message, user_id, type, is_read, created_at, updated_at) VALUES (?, ?, ?, ?, ?, NOW(), NOW())`, [channel.id, message, user_id, type, false], (err, messageInserted) => {
-                    if (err) {
-                        return reject(err);
-                    }
-                    console.log(messageInserted);
-                    db.query(`SELECT * FROM users WHERE id = ?`, [user_id], (err, user) => {
+                db.query(
+                    `INSERT INTO messgaes (channel_id, message, user_id, type, is_read, created_at, updated_at) 
+                     VALUES (?, ?, ?, ?, ?, NOW(), NOW())`, 
+                    [channel.id, message, user_id, type, false], 
+                    (err, result) => { // `result` sẽ chứa thông tin về kết quả chèn
                         if (err) {
                             return reject(err);
                         }
-                        resolve({
-                            message: message,
-                            type: type,
-                            user: user[0],
-                            channel: channel,
+                
+                        const insertedMessageId = result.insertId; // Lấy ID của bản ghi vừa được chèn
+                
+                        // Truy xuất tin nhắn vừa được chèn
+                        db.query(`SELECT * FROM messgaes WHERE id = ?`, [insertedMessageId], (err, messageInserted) => {
+                            if (err) {
+                                return reject(err);
+                            }
+                
+                            // Truy xuất thông tin người dùng liên quan
+                            db.query(`SELECT * FROM users WHERE id = ?`, [user_id], (err, user) => {
+                                if (err) {
+                                    return reject(err);
+                                }
+                                resolve({
+                                    message: messageInserted[0], // Tin nhắn vừa được tạo
+                                    type: type,
+                                    user: user[0],              // Thông tin người dùng
+                                    channel: channel,           // Thông tin kênh
+                                });
+                            });
                         });
-                    });
-                });
+                    }
+                );
             });
             
         });

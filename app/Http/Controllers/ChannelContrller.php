@@ -61,7 +61,7 @@ class ChannelContrller extends Controller
     {
         $user = Auth::user();
         $channel = Channel::where('slug', $slug)->firstOrFail();
-        $messages = Messgae::where('channel_id', $channel->id)->limit(10)->orderBy('created_at', 'desc')->get();
+        $messages = Messgae::where('channel_id', $channel->id)->orderBy('created_at', 'desc')->get();
         $users = User::where('id', '!=', $user->id)->get();
         if($request->ajax()){
             if($request->has('time')){
@@ -125,6 +125,11 @@ class ChannelContrller extends Controller
                 $query->where('user_id', Auth::user()->id);
             })->where('status', 'trading')->paginate(7, ['*'], 'page', $page);
         return response()->json(['data' => $channels, 'current_page' => $channels->currentPage()]);
+    }
+
+    public function uploadMessage(Request $request)
+    {
+        dd($request->all());
     }
 }
 
