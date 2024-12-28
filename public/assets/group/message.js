@@ -1,5 +1,7 @@
 $(document).ready(function () {
     //emit join channel
+    $('.hide-scrollbar').scrollTop($('#chat-body-inner')[0].scrollHeight);
+
     const formatDate = (date) => {
         return new Date(date).toLocaleTimeString('vi-VN', {
             hour: '2-digit',
