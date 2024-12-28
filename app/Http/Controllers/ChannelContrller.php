@@ -61,7 +61,7 @@ class ChannelContrller extends Controller
     {
         $user = Auth::user();
         $channel = Channel::where('slug', $slug)->firstOrFail();
-        $messages = Messgae::where('channel_id', $channel->id)->orderBy('created_at', 'desc')->get();
+        $messages = Messgae::where('channel_id', $channel->id)->get();
         $users = User::where('id', '!=', $user->id)->get();
         if($request->ajax()){
             if($request->has('time')){
