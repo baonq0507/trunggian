@@ -1,5 +1,12 @@
 @extends('layouts.app')
-
+@push('css')
+<style>
+    .theme-file-preview {
+        background-image: url('/assets/img/docs.webp') !important;
+        background-size: 100% 100% !important;
+    }
+</style>
+@endpush
 @section('content')
 <div class="d-flex flex-column h-100 position-relative">
     <!-- Chat: Header -->
@@ -78,7 +85,6 @@
                 </a>
             </div>
             <!-- Mobile: more -->
-
         </div>
     </div>
     <!-- Chat: Header -->
@@ -99,7 +105,50 @@
                         <div class="message-body">
                             <div class="message-content">
                                 <div class="message-text">
-                                    <p>{{$message->message}}</p>
+                                    @if($message->type == 'file')
+                                    @foreach($message->messageFiles as $file)
+                                    @if(\Illuminate\Support\Str::startsWith($file->file_type, 'image/'))
+                                    <img src="{{$file->file_url}}" class="img-fluid mb-2" />
+                                    <div class="mt-1">
+                                        <a href="{{$file->file_url}}" target="_blank" class="file-attachment">
+                                            <i class="fa fa-image"></i> {{$file->file_name}}
+                                        </a>
+                                    </div>
+                                    @else
+                                    <a href="{{$file->file_url}}" target="_blank" class="file-attachment {{Auth::user()->id == $message->user_id ? 'text-white' : ''}}">
+                                        @if(\Illuminate\Support\Str::startsWith($file->file_type, 'application/pdf'))
+                                        <i class="fa fa-file-pdf"></i>
+                                        @elseif(\Illuminate\Support\Str::startsWith($file->file_type, 'application/msword') || \Illuminate\Support\Str::contains($file->file_type, 'wordprocessingml'))
+                                        <i class="fa fa-file-word"></i>
+                                        @elseif(\Illuminate\Support\Str::startsWith($file->file_type, 'application/vnd.ms-excel') || \Illuminate\Support\Str::contains($file->file_type, 'spreadsheetml'))
+                                        <i class="fa fa-file-excel"></i>
+                                        @elseif(\Illuminate\Support\Str::startsWith($file->file_type, 'application/vnd.ms-powerpoint') || \Illuminate\Support\Str::contains($file->file_type, 'presentationml'))
+                                        <i class="fa fa-file-powerpoint"></i>
+                                        @elseif(\Illuminate\Support\Str::startsWith($file->file_type, 'text/'))
+                                        <i class="fa fa-file-text"></i>
+                                        @elseif(\Illuminate\Support\Str::startsWith($file->file_type, 'video/'))
+                                        <i class="fa fa-file-video"></i>
+                                        @elseif(\Illuminate\Support\Str::startsWith($file->file_type, 'audio/'))
+                                        <i class="fa fa-file-audio"></i>
+                                        @elseif(\Illuminate\Support\Str::startsWith($file->file_type, 'application/zip') || \Illuminate\Support\Str::startsWith($file->file_type, 'application/x-rar'))
+                                        <i class="fa fa-file-archive"></i>
+                                        @elseif(\Illuminate\Support\Str::startsWith($file->file_type, 'application/json'))
+                                        <i class="fa fa-file-code"></i>
+                                        @else
+                                        <i class="fa fa-file"></i>
+                                        @endif
+                                        {{$file->file_name}}
+                                    </a>
+                                    @endif
+                                    @endforeach
+                                    @else
+                                    @php
+                                    $message_text = $message->message;
+                                    $url_pattern = '/(https?:\/\/[^\s]+)/';
+                                    $message_text = preg_replace($url_pattern, '<a href="$1" target="_blank" class="' . (Auth::user()->id == $message->user_id ? 'text-white' : '') . '">$1</a>', $message_text);
+                                    @endphp
+                                    {!! $message_text !!}
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -124,12 +173,14 @@
 
         <!-- Chat: Form -->
         <form class="chat-form rounded-pill bg-dark" data-emoji-form="" enctype="multipart/form-data" id="chat-form">
+
             <div class="row align-items-center gx-0">
                 <div class="col-auto">
-                    <a href="#" class="btn btn-icon btn-link text-body rounded-circle" id="dz-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+                    <a href="javascript:void(0)" class="btn btn-icon btn-link text-body rounded-circle" id="dzz-btn">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
                             <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
-                        </svg>
+                        </svg> -->
+                        <i class="fa fa-paperclip fa-lg"></i>
                     </a>
                 </div>
 
@@ -284,7 +335,7 @@
                                     <i class="fa fa-copy"></i>
                                 </div>
                             </div>
-                            </>
+                            </s>
                     </li>
                     <li class="list-group-item">
                         <div class="row align-items-center gx-6">

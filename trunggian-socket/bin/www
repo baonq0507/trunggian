@@ -58,6 +58,9 @@ const eventPath = path.join(__dirname, '../events');
 const events = fs.readdirSync(eventPath);
 
 io.on('connection', function (socket) {
+  // Remove next() from io.use middleware to prevent double execution
+  socket.removeAllListeners(); // Clear any existing listeners
+  
   events.forEach((event) => {
     const eventName = event.split('.')[0];
     const eventHandler = require(path.join(eventPath, event));

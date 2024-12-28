@@ -27,4 +27,9 @@ class Messgae extends Model
     {
         return $query->where('is_read', true);
     }
+
+    public function messageFiles()
+    {
+        return $this->hasMany(MessageFile::class);
+    }
 }

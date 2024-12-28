@@ -3,6 +3,8 @@ const Channel = require('../repository/channel');
 
 module.exports = {
     joinGroup: async function(socket, data, user) {
+        console.log('joinGroup');
+        
         const channelId = socket.handshake.auth.channelId;
         console.log(channelId);
         

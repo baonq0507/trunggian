@@ -20,6 +20,7 @@
     <link class="css-lt" rel="stylesheet" href="{{asset('assets/css/template.bundle.css')}}" media="(prefers-color-scheme: light)">
     <link class="css-dk" rel="stylesheet" href="{{asset('assets/css/template.dark.bundle.css')}}" media="(prefers-color-scheme: dark)">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Theme mode -->
     <script>
@@ -38,6 +39,8 @@
             });
         }
     </script>
+
+    @stack('css')
 </head>
 
 <body>

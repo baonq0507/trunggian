@@ -3,7 +3,7 @@ var router = express.Router();
 var multer = require('multer');
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads')
+    cb(null, 'public/uploads')
   },
   filename: function (req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now() + '.' + file.mimetype.split('/')[1])
@@ -27,10 +27,10 @@ router.post('/upload', upload.single('file'), function(req, res, next) {
   }
   // res.send(file)
   res.json({
-    url: file.path,
     type: file.mimetype,
     name: file.originalname,
-    size: file.size
+    size: file.size,
+    url: `${req.protocol}://${req.get('host')}/uploads/${file.filename}`
   })
 });
 
