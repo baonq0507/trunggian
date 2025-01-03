@@ -453,15 +453,31 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <script src="{{ asset('assets/common/ajax.js') }}"></script>
-    <script src="{{ asset('assets/group/index.js') }}"></script>
+    <script src="{{ asset('assets/group/index.js?v=4') }}"></script>
     <script>
         const chanelRoute = "{{route('channels.load')}}";
+        let countInvite = "{{count($invites)}}";
     </script>
 
     <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script>
+        const socketUrl = "{{env('SOCKET_URL')}}";
+        const token = "{{Cookie::get('token')}}";
+        const userId = "{{Auth::user()->id}}";
+
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
+
+        var pusher = new Pusher("{{env('PUSHER_KEY')}}", {
+            cluster: "{{env('PUSHER_CLUSTER')}}",
+            useTLS: true
+        });
+
+       
+    </script>
+
 
     @stack('js')
 </body>

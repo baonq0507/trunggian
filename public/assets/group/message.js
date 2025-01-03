@@ -144,8 +144,9 @@ $(document).ready(function () {
             files: uploadedFiles
         };
 
-        console.log(payload);
-
+        if (payload.type == 'text' && payload.message == '') {
+            return;
+        }
 
         // Emit message với files
         console.log();
@@ -156,7 +157,7 @@ $(document).ready(function () {
         let messageContent = '';
         if (uploadedFiles.length > 0) {
             uploadedFiles.forEach(file => {
-                if (file.type.startsWith('image/')) {
+                if (file.type.startsWith('image/jpeg') || file.type.startsWith('image/jpg') || file.type.startsWith('image/png') || file.type.startsWith('image/gif')) {
                     messageContent += `<img src="${file.url}" class="img-fluid mb-2" /><br>`;
                 } else {
                     messageContent += `<a href="${file.url}" target="_blank" class="file-attachment text-white">

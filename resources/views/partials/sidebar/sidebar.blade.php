@@ -50,7 +50,7 @@
 
                         <!-- nếu có lời mời thì xuất hiện ở đây -->
                         @if (count($invites) > 0)
-                        <div class="card-list">
+                        <div class="card-list" id="invite_list">
                             @foreach ($invites as $invite)
                             <div class="card border-0 mb-5">
                                 <div class="card-body">

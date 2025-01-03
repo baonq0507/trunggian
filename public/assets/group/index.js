@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    if (countInvite > 0) {
+        document.title = `(${countInvite}) Bạn đã được mời vào nhóm`;
+    }
     $('#create-group').click(function (e) {
         e.preventDefault();
         const form = $('#create-group-form');
@@ -157,5 +160,43 @@ $(document).ready(function () {
                 });
             }
         }
+    });
+
+
+
+    var channel = pusher.subscribe(`invite-${userId}`);
+    channel.bind('invite', function (data) {
+        const audio = new Audio('/assets/audio/invite.mp3');
+        audio.play();
+        document.title = `(${countInvite + 1}) Bạn đã được mời vào nhóm ${data.channel.name}`;
+        $('#invite_list').prepend(`
+            <div class="card border-0 mb-5">
+                <div class="card-body">
+                    <div class="row gx-5">
+                        <div class="col-auto">
+                            <div class="avatar">
+                                <img src="/assets/img/avatars/4.jpg" alt="#" class="avatar-img">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="d-flex align-items-center mb-3">
+                                <h5 class="me-auto mb-0">${data.channel.name}</h5>
+                                <span class="text-muted extra-small ms-2">${formatDate(data.channel.created_at)}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row gx-4">
+                        <div class="col">
+                            <a href="${data.url_reject}" class="btn btn-sm btn-soft-primary w-100">Từ chối</a>
+                        </div>
+                        <div class="col">
+                            <a href="${data.url_invite}" class="btn btn-sm btn-primary w-100">Chấp nhận</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `);
     });
 });

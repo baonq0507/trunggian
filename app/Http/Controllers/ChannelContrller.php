@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use App\Models\Messgae;
 use App\Models\User;
 use App\Models\UserChannel;
+use Pusher\Pusher;
 class ChannelContrller extends Controller
 {
     public function create(Request $request)
@@ -34,7 +35,7 @@ class ChannelContrller extends Controller
         $user = Auth::user();
         $data['created_by'] = $user->id;
         $data['status'] = 'pending';
-        if($data['type'] == 'buy'){
+        if($data['type'] == 'sell'){
             if($user->balance < $data['amount']){
                 return response()->json(['message' => 'Số dư không đủ'], 422);
             }
@@ -54,6 +55,12 @@ class ChannelContrller extends Controller
             }
         }
         $url_invite = route('join.channel', $channel->slug);
+
+        $pusher = new Pusher(env('PUSHER_KEY'), env('PUSHER_SECRET'), env('PUSHER_APP_ID'), [
+            'cluster' => env('PUSHER_CLUSTER'),
+            'useTLS' => true
+        ]);
+        $pusher->trigger('invite-' . $user->id, 'invite', ['message' => 'Bạn đã được mời vào nhóm ' . $channel->name, 'url_invite' => $url_invite, 'channel' => $channel, 'reject_url' => route('reject.invite', $channel->id)]);
         return response()->json(['message' => 'Tạo nhóm thành công', 'data' => $channel, 'url_invite' => $url_invite], 200);
     }
 
@@ -77,20 +84,23 @@ class ChannelContrller extends Controller
     {
         $user = Auth::user();
         $channel = Channel::where('slug', $slug)->firstOrFail();
-        if($channel->userChannels()->where('user_id', $user->id)->exists()){
-            $channel->userChannels()->where('user_id', $user->id)->update(['status' => 'trading']);
-            return redirect()->route('message', $slug);
-        }
-        if($channel->userChannels()->where('user_id', $user->id)->exists()){
+        if($channel->userChannels()->where('user_id', $user->id)->where('status', 'trading')->exists()){
             return response()->json(['message' => 'Bạn đã tham gia nhóm này'], 422);
+        } else {
+            if($channel->userChannels()->where('user_id', $user->id)->exists()){
+                $channel->userChannels()->where('user_id', $user->id)->update(['status' => 'trading']);
+                return redirect()->route('message', $slug);
+            } else {
+                return response()->json(['message' => 'Bạn không thể tham gia nhóm này'], 422);
+            }
+        }
+        //type
+        if($channel->type == 'sell'){
+            if($user->balance < $channel->amount){
+                return response()->json(['message' => 'Số dư không đủ'], 422);
+            }
         }
 
-        //type
-        // if($channel->type == 'buy'){
-        //     if($user->balance < $channel->amount){
-        //         return response()->json(['message' => 'Số dư không đủ'], 422);
-        //     }
-        // }
         $channel->userChannels()->create([
             'user_id' => $user->id,
             'status' => 'trading',

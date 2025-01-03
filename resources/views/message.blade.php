@@ -107,7 +107,7 @@
                                 <div class="message-text">
                                     @if($message->type == 'file')
                                     @foreach($message->messageFiles as $file)
-                                    @if(\Illuminate\Support\Str::startsWith($file->file_type, 'image/'))
+                                    @if(\Illuminate\Support\Str::startsWith($file->file_type, 'image/jpeg') || \Illuminate\Support\Str::startsWith($file->file_type, 'image/jpg') || \Illuminate\Support\Str::startsWith($file->file_type, 'image/png') || \Illuminate\Support\Str::startsWith($file->file_type, 'image/gif'))
                                     <img src="{{$file->file_url}}" class="img-fluid mb-2" />
                                     <div class="mt-1">
                                         <a href="{{$file->file_url}}" target="_blank" class="file-attachment">
@@ -408,10 +408,7 @@
 <!-- socket cdn -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js" integrity="sha512-8BHxHDLsOHx+flIrQ0DrZcea7MkHqRU5GbTHmbdzMRnAaoCIkZ97PqZcXJkKZckMMhqfoeaJE+DNUVuyoQsO3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    const socketUrl = "{{env('SOCKET_URL')}}";
     const channelId = "{{$channel->slug}}";
-    const token = "{{Cookie::get('token')}}";
-    const userId = "{{Auth::user()->id}}";
     const messageRoute = "{{route('message', $channel->slug)}}";
     const socket = io(socketUrl, {
         withCredentials: true,
